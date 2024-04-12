@@ -16,5 +16,4 @@ def sumar_numeros():
         except ValueError:
             print("Error: Tiene ingresar números enteros. ")
 
-
 sumar_numeros()
