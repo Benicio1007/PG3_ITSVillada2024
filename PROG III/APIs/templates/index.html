@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaciones</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Publicaciones</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>UserID</th>
+            <th>Title</th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+            <td>{{ post.id }}</td>
+            <td>{{ post.userId }}</td>
+            <td>{{ post.title }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>Menú:</h2>
+    <form action="/" method="POST">
+        <button type="submit" name="action" value="create">Crear publicación</button>
+        <button type="submit" name="action" value="update">Actualizar publicación</button>
+        <button type="submit" name="action" value="search_by_id">Búsqueda por ID</button>
+        <button type="submit" name="action" value="search_logical">Búsqueda lógica</button>
+        <button type="submit" name="action" value="show_table">Mostrar tabla de publicaciones</button>
+    </form>
+</body>
+</html>
+
